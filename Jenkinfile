@@ -1,6 +1,14 @@
 pipeline{
   agent any
+  environment{
+    USERNAME = 'ibmcloud'
+  }
   stages{
+    stage('ENV'){
+      environment{
+        API_KEY = 'ISCP123'
+      }  
+    }
     stage('ls'){
       steps{
         sh 'ls'
